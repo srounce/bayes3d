@@ -58,10 +58,11 @@ def time_code_block(func, args):
 
 
 def get_assets_dir():
-    return os.path.join(
+    defaultPath = os.path.join(
         os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "assets"
     )
 
+    return os.getenv("B3D_ASSET_PATH", defaultPath)
 
 def make_cube_point_cloud(side_width, num_points):
     """
